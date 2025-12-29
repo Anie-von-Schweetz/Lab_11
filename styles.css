@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f5f5f5;
+}
+
+.container {
+    display: grid;
+    grid-template-areas: 
+        "header header"
+        "sidebar main"
+        "footer footer";
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    margin: 0 auto;
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Шапка с главным меню */
+header {
+    grid-area: header;
+    background: #4CAF50;
+    color: white;
+    padding: 15px 20px;
+}
+
+.main-menu {
+    display: flex;
+    gap: 20px;
+}
+
+.main-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    transition: background 0.3s;
+}
+
+.main-menu a:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+.main-menu a.selected {
+    background: white;
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+/* Боковое меню */
+aside {
+    grid-area: sidebar;
+    background: #f8f9fa;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+}
+
+.side-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.side-menu a {
+    color: #333;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 3px;
+    transition: all 0.3s;
+}
+
+.side-menu a:hover {
+    background: #e9ecef;
+}
+
+.side-menu a.selected {
+    background: #4CAF50;
+    color: white;
+    font-weight: bold;
+}
+
+/* Основной контент */
+main {
+    grid-area: main;
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Табличная верстка */
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.table-container th, 
+.table-container td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.table-container th {
+    background: #f8f9fa;
+    font-weight: bold;
+}
+
+.table-container a {
+    color: #2196F3;
+    text-decoration: none;
+}
+
+.table-container a:hover {
+    text-decoration: underline;
+}
+
+/* Блочная верстка */
+.blocks-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+    justify-content: center;
+}
+
+.single-block {
+    border: 2px solid #4CAF50;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    background: #f8fff8;
+    text-align: center;
+    min-width: 300px;
+    max-width: 500px;
+}
+
+.multi-block {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    background: white;
+    flex: 1 0;
+    min-width: 300px;
+    max-width: 300px;
+    text-align: center;
+}
+
+.block-row {
+    margin-bottom: 8px;
+    font-family: monospace;
+}
+
+/* Подвал */
+footer {
+    grid-area: footer;
+    background: #333;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    border-top: 1px solid #444;
+}
+
+.info {
+    font-size: 14px;
+    margin: 5px 0;
+}
