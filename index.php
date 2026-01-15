@@ -10,7 +10,6 @@
     <div class="container">
         <?php
         // Определяем текущие параметры
-        // По умолчанию - табличная верстка (если не указано иное)
         $html_type = isset($_GET['html_type']) ? $_GET['html_type'] : 'TABLE';
         $content = isset($_GET['content']) ? $_GET['content'] : null;
 
@@ -56,7 +55,6 @@
             // Функция для преобразования числа в ссылку
             function numberToLink($num) {
                 if ($num >= 1 && $num <= 9) {
-                    // Ссылки на числа сбрасывают тип верстки (не передают html_type)
                     return '<a href="?content=' . $num . '">' . $num . '</a>';
                 }
                 return (string)$num;
